@@ -29,5 +29,5 @@ jobs:
           file: ./src/Dockerfile
           tags: |
             tiagoaneves/api-produto:latest
-            tiagoaneves/api-produto:$(( github.run_number ))
+            tiagoaneves/api-produto:${{ github.run_number }}
           push: true
