@@ -67,11 +67,10 @@ jobs:
           ./install.sh --accept-all-defaults
           export PATH=~/bin:$PATH
           exec -l $SHELL
-          alias oci=~/bin/oci
       - name: 'Fix Config File Permissions'
         run: |
-          oci setup repair-file-permissions --file  ~/.oci/config
-          oci setup repair-file-permissions --file  ~/.oci/key.pem
+          ~/bin/oci setup repair-file-permissions --file  ~/.oci/config
+          ~/bin/oci setup repair-file-permissions --file  ~/.oci/key.pem
       - name: Deploy MONGODB
         uses: Azure/k8s-deploy@v1.3
         with:
