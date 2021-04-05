@@ -65,7 +65,7 @@ jobs:
           curl -L -O https://raw.githubusercontent.com/oracle/oci-cli/master/scripts/install/install.sh
           chmod +x install.sh
           ./install.sh --accept-all-defaults
-          export PATH:$PATH:/home/runner/bin"
+          export PATH:$PATH:/home/runner/bin
           exec -l $SHELL
       - name: 'Fix Config File Permissions'
         run: |
