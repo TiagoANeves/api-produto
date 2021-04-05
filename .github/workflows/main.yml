@@ -55,14 +55,14 @@ jobs:
         with:
           # Path to the manifest files which will be used for deployment.
           manifests: |
-            k8s/mongodb/deploymet.yaml
+            k8s/mongodb/deployment.yaml
             k8s/mongodb/service.yaml
       - name: Deploy API
         uses: Azure/k8s-deploy@v1.3
         with:
           # Path to the manifest files which will be used for deployment.
           manifests: |
-            k8s/api/deploymet.yaml
+            k8s/api/deployment.yaml
             k8s/api/service.yaml
             
          
