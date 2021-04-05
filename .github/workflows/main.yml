@@ -65,8 +65,9 @@ jobs:
           curl -L -O https://raw.githubusercontent.com/oracle/oci-cli/master/scripts/install/install.sh
           chmod +x install.sh
           ./install.sh --accept-all-defaults
-          export PATH=$PATH:~/bin
+          export PATH=~/bin:$PATH
           exec -l $SHELL
+          alias oci=~/bin/oci
       - name: 'Fix Config File Permissions'
         run: |
           oci setup repair-file-permissions --file  ~/.oci/config
