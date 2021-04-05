@@ -65,12 +65,12 @@ jobs:
           curl -L -O https://raw.githubusercontent.com/oracle/oci-cli/master/scripts/install/install.sh
           chmod +x install.sh
           ./install.sh --accept-all-defaults
-          export PATH:$PATH:/home/runner/bin
+          export PATH:$PATH:~/bin
           exec -l $SHELL
       - name: 'Fix Config File Permissions'
         run: |
-          oci setup repair-file-permissions --file /home/runner/.oci/config
-          oci setup repair-file-permissions --file /home/runner/.oci/key.pem
+          oci setup repair-file-permissions --file  ~/.oci/config
+          oci setup repair-file-permissions --file  ~/.oci/key.pem
       - name: Deploy MONGODB
         uses: Azure/k8s-deploy@v1.3
         with:
