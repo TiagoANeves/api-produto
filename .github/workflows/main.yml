@@ -67,10 +67,9 @@ jobs:
           ./install.sh --accept-all-defaults
           export PATH=~/bin:$PATH
           exec -l $SHELL
-          whereis oci
+          /bin/bash
       - name: 'Fix Config File Permissions'
         run: |
-          alias oci=~/bin/oci
           oci setup repair-file-permissions --file  ~/.oci/config
           oci setup repair-file-permissions --file  ~/.oci/key.pem
       - name: Deploy MONGODB
