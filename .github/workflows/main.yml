@@ -66,8 +66,9 @@ jobs:
           chmod +x install.sh
           ./install.sh --accept-all-defaults
           export PATH=~/bin:$PATH
+      - name: 'Update Path'
+        run: |
           exec -l $SHELL
-          /bin/bash
       - name: 'Fix Config File Permissions'
         run: |
           oci setup repair-file-permissions --file  ~/.oci/config
