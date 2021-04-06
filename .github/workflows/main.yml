@@ -65,7 +65,8 @@ jobs:
           curl -L -O https://raw.githubusercontent.com/oracle/oci-cli/master/scripts/install/install.sh
           chmod +x install.sh
           ./install.sh --accept-all-defaults
-          export PATH=~/bin:$PATH
+          echo "::add-path::/home/runner/bin"
+          exec -l $SHELL
       - name: 'Update Path'
         run: |
           exec -l $SHELL
