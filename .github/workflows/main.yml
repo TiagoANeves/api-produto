@@ -65,10 +65,9 @@ jobs:
           curl -L -O https://raw.githubusercontent.com/oracle/oci-cli/master/scripts/install/install.sh
           chmod +x install.sh
           ./install.sh --accept-all-defaults
+          export ACTIONS_ALLOW_UNSECURE_COMMANDS=true
           echo "::add-path::/home/runner/bin"
           exec -l $SHELL
-        env:
-          ACTIONS_ALLOW_UNSECURE_COMMANDS: true
       - name: 'Fix Config File Permissions'
         run: |
           oci setup repair-file-permissions --file  ~/.oci/config
