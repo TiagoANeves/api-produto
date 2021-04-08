@@ -23,7 +23,7 @@ spec:
     spec:
       containers:
         - name: api
-          image: tiagoaneves/api-semana-kubedev
+          image: tiagoaneves/api-produto
           ports:
             - containerPort: 8080
           env:
